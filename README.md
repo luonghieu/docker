@@ -6,25 +6,19 @@ ___
 
 ## Quick Overview
 
-1. Clone Laradock inside your PHP project:
-
-    ```
-        git clone git@bitbucket.org:nldanang/mtb-docker.git
-    ```
-
-2. Enter the mtb-docker folder and rename env-example to .env.
+1. Enter the mtb-docker folder and rename env-example to .env.
 
     ```
         cp env-example .env
     ```
 
-3. Run your containers:
+2. Run your containers:
 
     ```
         docker-compose up -d nginx postgres redis
     ```
 
-4. Open your project’s .env file and set the following:
+3. Open your project’s .env file and set the following:
 
 
         #Database
@@ -37,7 +31,7 @@ ___
         REDIS_HOST=redis
 
 
-5. That's it! enjoy :)
+4. That's it! enjoy :)
 
 #Getting Started
 
@@ -214,38 +208,6 @@ ___
         S3_REGION=us-east-1
         S3_BUCKET=bucket
 
-### Caddy (Run Site on SSL with Let’s Encrypt Certificate)
-
-> Note: You need to Use Caddy here Instead of Nginx
-
-1. To go Caddy Folders and Edit CaddyFile
-
-
-        $root@server:/var/www/mtb/mtb-docker# cd caddy
-        $root@server:/var/www/mtb/mtb-docker/caddy# vim Caddyfile
-
-
-2. Remove https://cms.mtb.dev
-
-
-        https://cms.mtb.dev
-        root /var/www/mtb/mtb-cms-backend/public
-
-
-3. And replace with your https://yourdomain.com
-
-
-        https://yourdomain.com
-        root /var/www/mtb/mtb-cms-backend/public
-
-
-4. Run Your Caddy Container
-
-    ```
-        docker-compose up -d caddy
-    ```
-    
-5. View your Site in the Browser Securely Using HTTPS (https://yourdomain.com)
 
 ### Use PgAdmin
 
